@@ -2,6 +2,7 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { ThemeProvider } from "@/hooks/ThemeProvider";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import Navigation from "@/components/Navigation";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className="text-black dark:bg-gray-900 dark:text-white ">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main className="min-h-screen flex flex-col items-center">
+            <Navigation />
             {children}
           </main>
           <ThemeSwitcher className="fixed bottom-4 right-4" />
